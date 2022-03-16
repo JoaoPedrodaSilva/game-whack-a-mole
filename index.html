@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Whack-a-Mole</title>
+</head>
+<body>   
+
+    <div id="iframe-container">
+
+        <div id="initial-screen">
+
+            <h1 id="title">WHACK-A-MOLE!!!</h1>
+            <h2 id="subtitle">Select your difficult</h2>
+            <button id="easy" class="difficult-button">Easy</button>
+            <button id="normal" class="difficult-button">Normal</button>
+            <button id="hard" class="difficult-button">Hard</button>
+
+        </div>
+
+        <div id="game-screen">
+
+            <div id="info">
+                <div class="label-box">
+                    <h1 id="score-label" class="label">Score</h1>
+                    <span id="score" class="label"></span>
+                </div>
+                <div class="label-box">
+                    <h1 id="time-left-label" class="label">Time Left</h1>
+                    <span id="time-left" class="label"></span>
+                </div>
+                <div class="label-box">
+                    <h1 id="difficult-label" class="label">Difficult</h1>
+                    <span id="difficult" class="label"></span>
+                </div>
+            </div>
+
+            <div id="holes">
+                <div id="1" class="hole"></div>
+                <div id="2" class="hole"></div>
+                <div id="3" class="hole"></div>
+                <div id="4" class="hole"></div>
+                <div id="5" class="hole"></div>
+                <div id="6" class="hole"></div>
+                <div id="7" class="hole"></div>
+                <div id="8" class="hole"></div>
+                <div id="9" class="hole"></div>
+            </div>
+
+        </div>  
+        
+        <div id="post-game-screen">
+
+            <h1 id="message"></h1>
+            <button id="play-again">Play Again!</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
