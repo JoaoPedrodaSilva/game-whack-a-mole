@@ -1,24 +1,29 @@
 const initialScreen = document.querySelector('#initial-screen')
+const getReadyScreen = document.querySelector('#get-ready-screen')
 const gameScreen = document.querySelector('#game-screen')
 const postGameScreen = document.querySelector('#post-game-screen')
+const difficultDisplay = document.querySelector('#difficult')
 const anyDifficultButton = document.querySelectorAll('.difficult-button')
-const gridDisplay = document.querySelector('#holes')
+const getReadyDisplay = document.querySelector('#get-ready')
+const holesDisplay = document.querySelector('#holes')
 const allHoles = document.querySelectorAll('.hole')
 const moleDisplay = document.querySelector('.mole')
 const scoreDisplay = document.querySelector('#score')
 const timeLeftDisplay = document.querySelector('#time-left')
-const difficultDisplay = document.querySelector('#difficult')
+const hitDisplay = document.querySelector('#hit')
 const messageDisplay = document.querySelector('#message')
 const playAgainButton = document.querySelector('#play-again')
+
 let randomHole = null
 let countDownTimer = null
 let popMoleTimer = null
 let difficult = null
 let currentTime = null
-let score = null
+let hit = null
 
 startGame = () => {
     initialScreen.style.display = 'flex'
+    getReadyScreen.style.display = 'none'
     gameScreen.style.display = 'none'
     postGameScreen.style.display ='none'
     chooseDifficult()
@@ -27,21 +32,31 @@ startGame = () => {
 const chooseDifficult = () => {
     anyDifficultButton.forEach( button => {
         button.addEventListener('click', e => {
-            difficult = e.target.id            
-            popMole()
+            difficult = e.target.id 
+            getReady()            
         })
     })
 }
 
-popMole = () => {
+const getReady = () => {
     initialScreen.style.display = 'none'
+    getReadyScreen.style.display = 'flex'
+    getReadyDisplay.innerHTML = 3
+    setTimeout( () => {getReadyDisplay.innerHTML = 2}, 500)
+    setTimeout( () => {getReadyDisplay.innerHTML = 1}, 1000)
+    setTimeout( () => {getReadyDisplay.innerHTML = 'GO!'}, 1500)
+    setTimeout(popMole, 2000)
+}
+
+popMole = () => {
+    getReadyScreen.style.display = 'none'
     gameScreen.style.display = 'flex'
-    gridDisplay.style.display = 'flex'
+    holesDisplay.style.display = 'flex'
     clearInterval(countDownTimer)
     clearInterval(popMoleTimer)
-    score = 0
+    hit = 0
     currentTime = 10
-    scoreDisplay.innerHTML = score
+    scoreDisplay.innerHTML = hit
     timeLeftDisplay.innerHTML = currentTime
     
     if (difficult == 'easy') {
@@ -61,6 +76,7 @@ setRandomHole = () => {
     //remove any mole
     allHoles.forEach(hole => {
         hole.classList.remove('mole')
+        hole.classList.remove('mad-mole')  
     })
 
     //set a hole to pop the mole
@@ -80,9 +96,9 @@ minusOneSec = () => {
             hole.classList.remove('mole')
         })
 
-        gridDisplay.style.display = 'none'
+        holesDisplay.style.display = 'none'
         postGameScreen.style.display ='flex'
-        messageDisplay.innerHTML = `You hit ${score} moles on the ${difficult} difficult.`
+        hitDisplay.innerHTML = `hit ${hit} moles`
         playAgain()
     }
 }
@@ -97,9 +113,11 @@ playAgain = () => {
 allHoles.forEach(hole => {
     hole.addEventListener('click', () => { 
         if (hole.id === randomHole.id) {
-            score++
-            scoreDisplay.innerHTML = score
+            hit++
+            hole.classList.remove('mole')
+            hole.classList.add('mad-mole')            
             randomHole = null
+            scoreDisplay.innerHTML = hit            
         }
     })
 })
