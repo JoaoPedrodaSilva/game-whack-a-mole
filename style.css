@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Comic Sans', Courier, monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #iframe-container {
@@ -25,6 +25,8 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 95%;
+        height: 95%;
     }
 
         #title {
@@ -36,9 +38,9 @@ body {
         }
 
         .difficult-button {
-            font-size: 2.5rem;
-            margin: 5%;
-            padding: 8%;
+            font-size: 4rem;
+            margin: 1%;
+            padding: 5%;
             width: 50%;
             border-radius: 10%;
             box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
@@ -148,7 +150,7 @@ body {
             color: white;
         }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     #iframe-container {
         width: 560px;
         height: 560px;
@@ -174,5 +176,16 @@ body {
 
     html {
         font-size: 6px;
+    }
+}
+
+@media (max-width: 425px) {
+    #iframe-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    html {
+        font-size: 4px;
     }
 }
