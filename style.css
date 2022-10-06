@@ -1,4 +1,10 @@
-html{    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     font-size: 10px;
 }
 
@@ -15,176 +21,159 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 600px;
-    height: 600px;
+    width: 100vw;
+    height: 100vh;
     background-color: white;
 }
 
-    #initial-screen {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 95%;
-        height: 95%;
-    }
+#initial-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 
-        #title {
-            font-size: 4rem;
-        }
+#title {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
 
-        #subtitle {
-            font-size: 2.5rem;
-        }
+#subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
 
-        .difficult-button {
-            font-size: 4rem;
-            margin: 1%;
-            padding: 5%;
-            width: 50%;
-            border-radius: 10%;
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
-        }
+.difficult-button {
+    font-size: 4rem;
+    margin: 2%;
+    padding: 4%;
+    width: 75%;
+    height: 15%;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
 
-            #easy {
-                background-color: lightgreen;
-            }
+#easy {
+    background-color: lightgreen;
+}
 
-            #normal {
-                background-color: #e4eb1c;
-            }
+#normal {
+    background-color: #e4eb1c;
+}
 
-            #hard {
-                background-color: #d92c21;            
-            }
+#hard {
+    background-color: #d92c21;
+}
 
-    #get-ready-screen {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+#get-ready-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        #get-ready {
-            font-size: 8rem;
-        }
+#get-ready {
+    font-size: 8rem;
+}
 
-    #game-screen {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 95%;
-        height: 95%;
-    }
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 
-        #info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            width: 95%;
-            height: 10%;
-        }
+#info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
 
-            .label-box {
-                text-align: center;
-                width: 30%;
-                height: 100%;            
-            }
+.label-box {
+    margin-top: 5%;
+    text-align: center;
+    width: 30%;
+    height: 100%;
+}
 
-                .label {
-                    font-size: 2rem;
-                    line-height: 1rem;
-                }
+.label {
+    font-size: 2rem;
+    line-height: 3rem;
+}
 
-        #holes {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            width: 95%;
-            height: 90%;
-        }
+#holes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+}
 
-            .hole {
-                width: 30%;
-                height: 30%;
-                margin: 1%;
-                border: solid 1px;
-                border-radius: 50%;
-                background-color: black;
-            }
+.hole {
+    width: 25%;
+    height: 25%;
+    margin: 1%;
+    border: solid 1px;
+    border-radius: 50%;
+    background-color: black;
+}
 
-                .mole {                    
-                    background-image: url('img/mole.PNG');
-                    background-size: cover;
-                }
+.mole {
+    background-image: url('img/mole.PNG');
+    background-size: cover;
+}
 
-                .mad-mole {                    
-                    background-image: url('img/mad-mole.PNG');
-                    background-size: cover;
-                }
+.mad-mole {
+    background-image: url('img/mad-mole.PNG');
+    background-size: cover;
+}
 
-    #post-game-screen {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        width: 95%;
-        height: 90%;
-    }
+#post-game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+}
 
-        #message, #hit {
-            font-size: 3rem;
-        }
+#message,
+#hit {
+    font-size: 3rem;
+}
 
-        #play-again {
-            font-size: 3rem;
-            margin: 5%;
-            padding: 8%;
-            width: 50%;
-            border-radius: 10%;
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
-            background-color: darkslategrey;
-            color: white;
-        }
+#play-again {
+    font-size: 3rem;
+    margin: 5%;
+    padding: 8%;
+    width: 50%;
+    border-radius: 10%;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    background-color: darkslategrey;
+    color: white;
+}
 
 @media (max-width: 1024px) {
-    #iframe-container {
-        width: 560px;
-        height: 560px;
-    }
-
     html {
         font-size: 7px;
     }
 }
 
-@media (max-width: 768px) {
-    #iframe-container {
-        width: 420px;
-        height: 420px;
-    }
-}
-
 @media (max-width: 576px) {
-    #iframe-container {
-        width: 350px;
-        height: 350px;
-    }
-
     html {
         font-size: 6px;
     }
 }
 
 @media (max-width: 425px) {
-    #iframe-container {
-        width: 240px;
-        height: 240px;
-    }
-
     html {
         font-size: 4px;
     }
