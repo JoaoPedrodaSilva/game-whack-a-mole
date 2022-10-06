@@ -155,7 +155,7 @@ body {
     margin: 5%;
     padding: 8%;
     width: 50%;
-    border-radius: 10%;
+    border-radius: 2rem;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
     background-color: darkslategrey;
     color: white;
